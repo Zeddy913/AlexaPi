@@ -26,7 +26,7 @@ class SnowboyTrigger(BaseTrigger):
 
 	def setup(self):
 		# Get recognition parameters from config
-		model_path = self._tconfig['model']
+		model_path = os.path.join("snowboy/", self._tconfig['model'])
 		audio_gain = self._tconfig['audio_gain']
 		sensitivity = self._tconfig['sensitivity']
 
