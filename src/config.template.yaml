@@ -72,11 +72,19 @@ triggers:
 
 
   pocketsphinx:
-    enabled: true
+    enabled: false
     voice_confirm: true
 
     phrase: "alexa"
     threshold: 1e-10
+
+  snowboy:
+    enabled: true
+    voice_confirm: true
+
+    model: "alexa.umdl"
+    audio_gain: 1
+    sensitivity: 1
 
 # Commands to run before and after an interaction begins. Leave empty to disable.
 event_commands:
