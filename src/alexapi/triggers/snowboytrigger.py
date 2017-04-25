@@ -28,13 +28,13 @@ class SnowboyTrigger(BaseTrigger):
 		# Get recognition parameters from config
 		model_path = os.path.join("snowboy/", self._tconfig['model'])
 		audio_gain = self._tconfig['audio_gain']
-		sensitivity = self._tconfig['sensitivity']
+		sensitivity = str(self._tconfig['sensitivity'])
 
 		self._detector = snowboydetect.SnowboyDetect(
                     resource_filename=RESOURCE_FILE.encode(), model_str=model_path.encode())
                 self._detector.SetAudioGain(audio_gain)
 
-                self._detector.SetSensitivity("1".encode())
+                self._detector.SetSensitivity(sensitivity.encode())
 
 
 
